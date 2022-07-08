@@ -1,0 +1,213 @@
+:root {
+    --background-dark-color: #2f303a; /* rgb(47, 48, 58) */ 
+    /*--background-dark-color: #C4C4C4; rgb(196, 196, 196);*/
+  
+    --background-light-color: #f5f4fa; /* rgb(245, 244, 250); */
+    --primary-dark-color: #212121; /* rgb(33, 33, 33)*/
+    --primary-light-color: #757575; /*rgb(117, 117, 117)*/
+    --accent-light-color: #2196f3; /* rgb(33, 150, 243) */
+    --accent-light-alfa-color: rgb(33, 150, 243, 0.9);
+    --accent-dark-color: #000000; /* rgb(0,0,0) */
+    --main-light-color: #ffffff; /* rgb(255,255,255) */
+    --main-light-alfa-color: rgba(255, 255, 255, 0.6);
+  
+    --accent-link-color :#afb1b8; /* rgb(175, 177, 184); */
+  
+    /* for grid  */
+    --margin-set-gap: 30px;
+  
+    /* transition */
+    --main-transition-duration: 250ms;
+    --main-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+  
+    color: var(--primary-dark-color);
+    background-color: var(--main-light-color);
+  }
+
+  .button {
+    color: var(--main-light-color);
+    background-color: var(--accent-light-color);
+  
+    border: none;
+    border-radius: 4px;
+    border-color: transparent;
+  
+    cursor: pointer;
+  }
+  
+  
+
+  .title {
+    margin-top: 0;
+    margin-bottom: 50px;
+  
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.167; /* 42/36; */
+    text-align: center;
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+  
+    width: 1200px; 
+  
+    outline: 1px solid tomato;
+  }
+
+  .modal {
+    position: relative;
+
+    display: block;
+    width: 530px;
+    height: 580px;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+    outline: 1px solid tomato;
+
+  }
+
+  .modal-button-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  
+    padding: 0;
+  
+    width: 30px;
+    height: 30px;
+  
+    background-color: var(--main-light-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+  
+    transition: fill var(--main-transition-duration) var(--main-transition-timing-function);
+    /* transition-property:  fill , border-color; */
+  
+    cursor: pointer;
+  }
+  
+  .modal-button-close:hover,
+  .modal-button-close:focus {
+    fill: var(--accent-light-color);
+    /* border-color: var(--accent-light-alfa-color); */
+  }
+
+  .modal .title {
+
+    margin-bottom: 12px;
+
+    font-size: 20px;
+    line-height: 1.15;
+  }
+
+  .lable-input {
+    position: relative;
+
+    display: block;
+    margin-bottom: 10px;
+
+    font-size: 12px;
+    line-height: 1.167;
+    letter-spacing: 0.01em;;
+
+    color: var(--primary-light-color);
+    fill: currentColor;
+
+    transition: var(--main-transition-duration) var(--main-transition-timing-function);
+    transition-property: color, fill;
+
+  }
+
+  .lable-input.end{
+    margin-bottom: 20px;
+  }
+
+  .lable-input textarea[class="input"] {
+    resize: none;
+  }
+
+
+  .lable-input:hover,
+  .lable-input:focus,
+  .lable-input:active,
+  
+  .lable-input:hover .input,
+  .lable-input:focus .input,
+  .lable-input:active .input{
+    border-color: var(--accent-light-color);
+    fill: var(--accent-light-color);
+  }
+
+  .input {
+    display: block;
+    width: 100%;
+
+    margin-top: 5px;
+    padding: 12px 16px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+  }
+
+  .input.fix{
+    padding: 0;
+    padding-left: 45px;
+
+    height: 40px;
+  }
+
+  .input-icon {
+    position: absolute;
+    top: 30px;
+    left: 12px;
+  }
+
+  .position-center {
+    text-align: center;
+  }
+
+  .position-center .lable-input {
+    margin-bottom: 30px;
+
+    font-size: 14px;
+    line-height: 1.714;
+    letter-spacing: 0.03em;
+  }
+
+  .button-submit {
+    display: inline-flex;
+    padding: 10px 55px;
+
+    line-height: 1.875;
+    letter-spacing: 0.06em;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    fill: var(--main-light-color);
+
+    transition: background-color var(--main-transition-duration) var(--main-transition-timing-function); 
+  }
+
+  .button-submit:hover,
+  .button-submit:focus {
+    background-color: #188CE8;
+  }
