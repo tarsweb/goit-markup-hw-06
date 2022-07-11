@@ -32,6 +32,19 @@
     background-color: var(--main-light-color);
   }
 
+  .visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+
   .button {
     color: var(--main-light-color);
     background-color: var(--accent-light-color);
@@ -119,53 +132,6 @@
     line-height: 1.15;
   }
 
-  .lable-input {
-    /* position: relative; */
-
-    /* display: block;
-    margin-bottom: 10px; */
-
-    
-  }
-
-  .lable-input.end{
-    /* margin-bottom: 20px; */
-  }
-
-  .lable-input textarea[class="input"] {
-    resize: none;
-  }
-
-
-  .lable-input:hover,
-  .lable-input:focus,
-  .lable-input:active,
-  
-  .lable-input:hover .input,
-  .lable-input:focus .input  {
-    border-color: var(--accent-light-color);
-    fill: var(--accent-light-color);
-  }
-
-  .input {
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    margin-top: 5px;
-    padding: 12px 16px;
-
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-  }
-
-  .input.fix{
-    padding: 0;
-    padding-left: 45px;
-
-    height: 40px;
-  }
-
   .form-field{
     display: block;
     margin-bottom: 10px;
@@ -181,17 +147,10 @@
     transition-property: color, fill;
   }
     
-  .form-field:nth-last-child(2) {
+  /* .form-field:nth-last-child(2) {
     margin-bottom: 20px;
-  }
+  } */
 
-  .form-field > textarea[class="input"] {
-    resize: none;
-  }
-
-  .form-field > textarea[class="input"]::placeholder {
-    color: rgba(117, 117, 117, 0.5);
-  }
 
   .input-wrap{
     position: relative;
@@ -211,17 +170,29 @@
     border-radius: 4px; 
     
     transition: var(--main-transition-duration) var(--main-transition-timing-function);
-    transition-property: color, fill;
+    transition-property: color, border-color;
+  }
+
+  .form-input.textarea {
+    margin-top: 5px;
+    padding: 12px 16px;
+
+    resize: none;
+  }
+
+  .form-input.textarea::placeholder {
+    color: rgba(117, 117, 117, 0.5);
   }
 
   .form-input:hover + .icon-input,
   .form-input:focus + .icon-input,
   .form-input:not(:placeholder-shown) .icon-input{
-    fill: var(--accent-light-color);    
+    fill: var(--accent-light-color);
   }
 
   .form-input:hover,
-  .form-input:focus {
+  .form-input:focus 
+  {
     border-color: var(--accent-light-color);
   }
 
@@ -231,38 +202,92 @@
     left: 12px;
 
     transform: translateY(-50%);
-  }
 
-  .form-field input[type="checkbox"]{
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    margin: -1px;
+    transition: var(--main-transition-duration) var(--main-transition-timing-function);
+    transition-property: fill;
   }
-
-  /*  */
 
   .position-center {
     text-align: center;
+    margin-top: 20px;
   }
 
-  .position-center .lable-input {
+  .concord {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
     margin-bottom: 30px;
 
+    text-align: center;
+    
     font-size: 14px;
     line-height: 1.714;
     letter-spacing: 0.03em;
   }
 
-  .button-submit {
+  .concord .form-field {
     display: inline-flex;
+    margin: 0;
+  }
+
+  .form-checkbox{
+    transition: border-color var(--main-transition-duration) var(--main-transition-timing-function);
+  }
+
+  .form-checkbox:hover,
+  .form-checkbox:focus {
+    border-color: var(--accent-light-color);
+  }
+
+  .form-checkbox:hover + .icon-checkbox,
+  .form-checkbox:focus + .icon-checkbox{
+    border-color: var(--accent-light-color);
+  }
+
+  .form-checkbox:checked + .icon-checkbox{
+    display: block;
+    
+    background-color: var(--accent-light-color);
+    border-color: var(--accent-light-color);
+    /* background-image: url(../images/check-on.svg); */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3e%3ctitle%3echeck-on%3c/title%3e%3cpath fill='%23fff' d='M8.623 16.454l-0.124-0.119-0.124 0.117-1.735 1.645 0.137 0.131 6.417 6.12 0.124-0.119 13.644-13.016-0.137-0.13-1.712-1.633-0.124 0.119-11.795 11.243-4.57-4.36z'%3e%3c/path%3e%3c/svg%3e");
+    background-size: contain;
+    background-origin: border-box;
+  }
+
+  .icon-checkbox{
+    display: block;
+    content: '';
+    margin-right: 5px;
+
+    width: 16px;
+    height: 15px;
+
+    border: 2px solid #000000;
+    border-radius: 2px;
+  }
+
+  .form-checkbox.link {
+    margin-left: 5px;
+    text-decoration: underline;
+
+    font-size: 14px;
+    line-height: 1.714;
+    letter-spacing: 0.03em;
+
+    color: var(--accent-light-color);
+  }
+
+  .button-submit {
+
     padding: 10px 55px;
+
+     width: 200px;
+    height: 50px;
+
+    text-align: center;
 
     line-height: 1.875;
     letter-spacing: 0.06em;
